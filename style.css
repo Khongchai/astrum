@@ -6,24 +6,26 @@ a {
 #albumcover {
   clip-path: inset(0px 200px 10px 30px);
   box-shadow: 10px 10px 5px grey;
-  transition: transform 0.4s, clip-path 0.4s, left 0.4s, top 0.4s;
+  transition: transform 0.4s, clip-path 0.4s, left 0.4s, top 0.4s, opacity 0.4s;
   position: relative;
   /* values are from-top, from-right, from-bottom, from-left */
 }
 
-#astrumdescription, #albumcoverdescription {
-  position: relative;
-  top: -300px;
-  left: 28%;
-  font-family: segoe ui;
-  font-weight: lighter;
-  opacity: 0;
-  transition: opacity 0.4s, left 0.4s;
-}
-
-#astrumlogo:hover, #albumcover:hover {
+#concertcover:hover, #albumcover:hover {
   transform: scale(1.2);
   clip-path: inset(0px 0px 0px 0px);
+}
+
+#albumcoverdescription {
+  position: absolute;
+  color: white;
+  top: 10%;
+  left: 30%;
+  font-family: segoe ui;
+  font-weight: lighter;
+  font-size: 10px;
+  opacity: 0;
+  transition: opacity 0.4s, left 0.2s;
 }
 
 p {
@@ -32,10 +34,10 @@ p {
 
 .titlepagename {
   font-family: segoe ui;
-  background-color: #002724;
+  background-color: #F7F9E0;
   opacity: 0.75;
   height: 200px;
-  width: 100%;
+  width: auto;
   margin-bottom: 10;
   margin-top: 0;
   padding: 0;
@@ -43,34 +45,27 @@ p {
 
 #albumcover:hover ~ #albumcoverdescription {
   opacity: 1;
-  left: 48%;
-}
-
-#link1:hover {
-  transition: opacity 0.4s;
-}
-
-#link1:hover ~ #link2 {
-  opacity: 0.2;
-}
-
-#link2:hover {
-  transition: opacity 0.4s;
-}
-
-#link2:hover ~ #link1 {
-  opacity: 0;
+  font-size: 15px;
+  left: 50%;
 }
 
 #albumcover {
+  height: 400px;
+  width: 400px;
   top: -60px;
   left: 20%;
   margin: 10x;
+  animation-delay: 2s;
+  animation: float 4s ease-in-out infinite;
 }
 
 #albumcover:hover {
   left: 250px;
   top: -78px;
+}
+
+#albumcover:hover ~ #concertcover {
+  opacity: 0.2;
 }
 
 .tableheader {
@@ -120,30 +115,90 @@ p {
 }
 
 body {
-  margin: 0 !important;
-  padding: 0 !important;
-  background-color: #002724;
-  background-image: url("pictures/violingirl.png");
-  background-position: center 0;
-  background-size: cover;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  background-color: #826046;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
-#astrumlogo {
-  left: 44%;
-  top: -523px;
-  clip-path: inset(0px 200px 10px 30px);
-  box-shadow: 10px 10px 5px grey;
-  transition: transform 0.4s, clip-path 0.4s, left 0.4s, top 0.4s;
+#concertcover {
   position: relative;
+  top: -460px;
+  left: 36%;
+  width: 400px;
+  height: 400px;
+  clip-path: inset(0px 110px 0px 110px);
+  box-shadow: 10px 10px 5px grey;
+  transition: transform 0.4s, clip-path 0.4s, left 0.4s, top 0.4s, opacity 0.4s;
+  position: relative;
+  animation: float 6s ease-in-out infinite;
 }
 
-#astrumlogo:hover ~ #astrumdescription {
-  opacity: 1;
-  left: 48%;
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-20px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
 }
-
-#astrumdescription {
+#concertcoverdescription {
+  position: relative;
+  color: white;
   top: -700px;
+  left: 28%;
+  font-family: segoe ui;
+  font-weight: lighter;
+  opacity: 0;
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+#concertcoverlink:hover ~ #concertcoverdescription {
+  opacity: 1;
+  transform: 1.2;
+}
+
+#invisiblebox {
+  height: 390px;
+  width: 200px;
+  opacity: 0;
+  top: -60px;
+  left: 42.5%;
+  position: absolute;
+  background-color: red;
+  z-index: 10;
+  animation: float 6s ease-in-out infinite;
+}
+
+#links {
+  position: relative;
+  width: auto;
+  height: 700px;
+}
+
+#invisiblebox:hover {
+  left: 35%;
+  top: -90px;
+  width: 450px;
+  height: 450px;
+}
+
+#invisiblebox:hover + #albumcover {
+  opacity: 0.2;
+}
+
+#invisiblebox:hover ~ #concertcover {
+  transform: scale(1.2);
+  clip-path: inset(0px 0px 0px 0px);
 }
 
 #logo {
