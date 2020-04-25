@@ -11,7 +11,7 @@ a {
   /* values are from-top, from-right, from-bottom, from-left */
 }
 
-#concertcover:hover, #albumcover:hover {
+#concertcover:hover, #violinProfcover:hover, #albumcover:hover {
   transform: scale(1.2);
   clip-path: inset(0px 0px 0px 0px);
 }
@@ -51,6 +51,7 @@ p {
 
 #albumcover {
   height: 400px;
+  oacity: 1;
   width: 400px;
   top: -60px;
   left: 20%;
@@ -64,7 +65,7 @@ p {
   top: -78px;
 }
 
-#albumcover:hover ~ #concertcover {
+#albumcover:hover ~ div {
   opacity: 0.2;
 }
 
@@ -137,6 +138,25 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
+#violinProfcover {
+  position: relative;
+  top: -870px;
+  opacity: 1;
+  left: 52%;
+  width: 768px;
+  height: 432px;
+  clip-path: inset(20px 400px 0px 200px);
+  box-shadow: 10px 10px 5px grey;
+  transition: transform 0.4s, clip-path 0.4s, left 0.4s, top 0.4s, opacity 0.4s;
+  position: relative;
+  animation: float 5s ease-in-out infinite;
+}
+#violinProfcover:hover {
+  transform: scale(1.2);
+  left: 54%;
+  clip-path: inset(0px 0px 0px 0px);
+}
+
 @keyframes float {
   0% {
     box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
@@ -178,13 +198,6 @@ body {
   z-index: 10;
   animation: float 6s ease-in-out infinite;
 }
-
-#links {
-  position: relative;
-  width: auto;
-  height: 700px;
-}
-
 #invisiblebox:hover {
   left: 35%;
   top: -90px;
@@ -192,7 +205,13 @@ body {
   height: 450px;
 }
 
-#invisiblebox:hover + #albumcover {
+#links {
+  position: relative;
+  width: auto;
+  height: 700px;
+}
+
+#invisiblebox:hover ~ .forBlur {
   opacity: 0.2;
 }
 
