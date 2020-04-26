@@ -20,12 +20,13 @@ a {
   position: absolute;
   color: white;
   top: 10%;
+  letter-spacing: 3px;
   left: 30%;
   font-family: segoe ui;
   font-weight: lighter;
   font-size: 0px;
   opacity: 0;
-  transition: opacity 0.4s, left 0.2s;
+  transition: opacity 0.4s, left 0.4s;
 }
 
 #firstsettext {
@@ -56,7 +57,7 @@ p {
 
 #albumcover:hover ~ #albumcoverdescription {
   opacity: 1;
-  font-size: 15px;
+  font-size: 20px;
   left: 50%;
 }
 
@@ -126,6 +127,75 @@ p {
 }
 #planetlink2:hover > #planet2span {
   transform: scale(1.2);
+}
+
+.blackcover {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+#Mercury {
+  display: inline-block;
+  height: 150px;
+  opacity: 0.5;
+  width: 150px;
+  top: -60px;
+  left: 15%;
+  margin: 10px;
+  transition: opacity 0.4s, height 0.4s, width 0.4s, left 0.4s, top 0.4s;
+  position: relative;
+  animation: float 5s ease-in-out infinite;
+}
+#Mercury #Mercuryspan {
+  transition: opacity 0.4s;
+}
+#Mercury:hover {
+  opacity: 1;
+}
+#Mercury:hover > #Mercuryspan {
+  transform: scale(0.7);
+}
+
+#mercuryparagraph {
+  text-align: center;
+}
+
+.imagelinks {
+  position: relative;
+  left: 13%;
+}
+
+#Venus {
+  display: inline-block;
+  height: 150px;
+  opacity: 0.5;
+  width: 150px;
+  top: -400px;
+  left: 25%;
+  margin: 10px;
+  transition: opacity 0.4s, height 0.4s, width 0.4s, left 0.4s, top 0.4s;
+  position: relative;
+  animation: float 3s ease-in-out infinite;
+}
+#Venus #Venusspan {
+  transition: opacity 0.4s;
+}
+#Venus:hover {
+  opacity: 1;
+}
+#Venus:hover > #Venusspan {
+  transform: scale(0.7);
+}
+
+#Venusparagraph {
+  margin: 0px;
+  padding: 0px;
+  vertical-align: top;
+  text-align: center;
+  top: -180px;
+  position: relative;
 }
 
 .imagelinks {
@@ -254,6 +324,16 @@ p {
   overflow-y: hidden;
 }
 
+.listenbody {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  background-color: #826046;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 #aboutbody {
   width: 100%;
   height: 100%;
@@ -287,6 +367,23 @@ p {
   animation: float 6s ease-in-out infinite;
 }
 
+#violinProfcoverdescription {
+  font-family: segoe ui;
+  font-size: 20px;
+  left: 41%;
+  position: absolute;
+  font-weight: lighter;
+  opacity: 0;
+  letter-spacing: 3px;
+  color: #F7F9E0;
+  transition: opacity 0.2s, left 0.4s;
+}
+
+#invisiblebox2:hover ~ #violinProfcoverdescription {
+  opacity: 1;
+  left: 30%;
+}
+
 #violinProfcover {
   position: relative;
   top: -870px;
@@ -312,20 +409,24 @@ p {
     transform: translatey(0px);
   }
 }
-#concertcoverdescription {
-  position: relative;
-  color: white;
-  top: -700px;
-  left: 28%;
-  font-family: segoe ui;
+#concertcoverdescription2 {
   font-weight: lighter;
+  font-family: segoe ui;
+  color: #F7F9E0;
+  position: absolute;
+  font-size: 20px;
+  letter-spacing: 3px;
+  left: 30%;
+  top: 30%;
   opacity: 0;
-  transition: opacity 0.4s, transform 0.4s;
+  transition: opacity 0.2s, left 0.2s, top 0.2s;
+  z-index: 11;
 }
 
-#concertcoverlink:hover ~ #concertcoverdescription {
+#invisiblebox:hover ~ #concertcoverdescription2 {
   opacity: 1;
-  transform: scale(1.2);
+  left: 27%;
+  top: 48%;
 }
 
 #title {

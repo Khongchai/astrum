@@ -41,12 +41,13 @@ $creamcolor: #F7F9E0;
   position:absolute;
   color: white;
   top:10%;
+  letter-spacing: 3px;
   left: 30%;
   font-family: segoe ui;
   font-weight: lighter;
   font-size: 0px;
   opacity: 0;
-  transition: opacity .4s, left .2s;
+  transition: opacity .4s, left .4s;
 }
 
 #firstsettext
@@ -88,7 +89,7 @@ a
 #albumcover:hover ~ #albumcoverdescription
 {
   opacity: 1;
-  font-size: 15px;
+  font-size: 20px;
   left: 50%;
 }
 
@@ -179,12 +180,101 @@ a
     transform: scale(1.2);
   }
 }
+
+.blackcover
+{
+  position:fixed;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+//---------------------------------------------------------------------------------------------
+#Mercury
+{
+  display: inline-block;
+  height: 150px;
+  opacity: 0.5;
+  width: 150px;
+  top: -60px;
+  left: 15%;
+  margin: 10px;
+  transition: opacity .4s, height .4s, width .4s, left .4s, top .4s;
+  position: relative;
+  animation: float 5s ease-in-out infinite;
+  #Mercuryspan
+  {
+    transition: opacity .4s;
+  }
+
+  &:hover
+  {
+      opacity: 1;
+  }
+
+  &:hover > #Mercuryspan
+  {
+
+    transform: scale(0.7);
+  }
+}
+
+#mercuryparagraph
+{
+
+  text-align: center;
+
+}
 .imagelinks
 {
   position: relative;
   left: 13%;
 }
+//---------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------
+#Venus
+{
+  display: inline-block;
+  height: 150px;
+  opacity: 0.5;
+  width: 150px;
+  top: -400px;
+  left: 25%;
+  margin: 10px;
+  transition: opacity .4s, height .4s, width .4s, left .4s, top .4s;
+  position: relative;
+  animation: float 3s ease-in-out infinite;
+  #Venusspan
+  {
+    transition: opacity .4s;
+  }
 
+  &:hover
+  {
+      opacity: 1;
+  }
+
+  &:hover > #Venusspan
+  {
+
+    transform: scale(0.7);
+  }
+}
+
+#Venusparagraph
+{
+  margin: 0px;
+  padding: 0px;
+  vertical-align: top;
+  text-align: center;
+  top: -180px;
+  position: relative;
+}
+.imagelinks
+{
+  position: relative;
+  left: 13%;
+}
+//---------------------------------------------------------------------------------------------
 #planetlink3
 {
   display: inline-block;
@@ -334,6 +424,17 @@ a
   overflow-y: hidden;
 }
 
+.listenbody
+{
+  width: 100%;
+   height: 100%;
+   margin: 0px;
+   padding: 0px;
+  background-color: $brownpastel;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 #aboutbody
 {
   width: 100%;
@@ -368,6 +469,25 @@ a
   transition: transform .4s, clip-path .4s, left .4s, top .4s, opacity .4s;
   position: relative;
   animation: float 6s ease-in-out infinite;
+}
+
+#violinProfcoverdescription
+{
+  font-family: segoe ui;
+  font-size: 20px;
+  left: 41%;
+  position: absolute;
+  font-weight: lighter;
+  opacity: 0;
+  letter-spacing: 3px;
+  color: $creamcolor;
+  transition: opacity .2s, left .4s;
+}
+
+#invisiblebox2:hover ~ #violinProfcoverdescription
+{
+  opacity: 1;
+  left: 30%;
 }
 
 #violinProfcover
@@ -406,22 +526,27 @@ a
   @extend %slitviewanim;
 }
 
-#concertcoverdescription
+#concertcoverdescription2
 {
-  position:relative;
-  color: white;
-  top:-700px;
-  left: 28%;
+  font-weight:lighter;
   font-family: segoe ui;
-  font-weight: lighter;
+  color: $creamcolor;
+  position: absolute;
+  font-size: 20px;
+  letter-spacing: 3px;
+  left: 30%;
+  top: 30%;
   opacity: 0;
-  transition: opacity .4s, transform .4s;
+  transition: opacity .2s, left .2s, top .2s;
+  z-index: 11;
 }
 
-#concertcoverlink:hover ~ #concertcoverdescription
+#invisiblebox:hover ~ #concertcoverdescription2
 {
   opacity: 1;
-  transform: scale(1.2);
+  left: 27%;
+  top: 48%;
+
 }
 
 
