@@ -1,9 +1,10 @@
 $brownpastel: #826046;
 $darkgreenhex: #002724;
+$creamcolor: #F7F9E0;
 %removeHyperformat
 {
   text-decoration: none;
-  color: white;
+  color: $brownpastel;
 }
 
 %slitview
@@ -43,9 +44,24 @@ $darkgreenhex: #002724;
   left: 30%;
   font-family: segoe ui;
   font-weight: lighter;
-  font-size: 10px;
+  font-size: 0px;
   opacity: 0;
   transition: opacity .4s, left .2s;
+}
+
+#firstsettext
+{
+  text-align: center;
+  vertical-align: top;
+  color: $creamcolor;
+  letter-spacing: 2px;
+
+  p
+  {
+    letter-spacing: 3px;
+    font-weight: lighter;
+  }
+
 }
 
 p{
@@ -76,6 +92,7 @@ a
   left: 50%;
 }
 
+
 #albumcover
 {
   height: 400px;
@@ -88,12 +105,161 @@ a
   animation-delay: 2s;
   animation: float 4s ease-in-out infinite;
 }
+
+
+
+
+#planetlink1
+{
+  display: inline-block;
+  height: 150px;
+  opacity: 0.5;
+  width: 130px;
+  top: -60px;
+  left: 20%;
+  margin: 10px;
+  transition: opacity .4s, height .4s, width .4s, left .4s, top .4s;
+  position: relative;
+  animation: float 4s ease-in-out infinite;
+  #planet1span
+  {
+    transition: opacity .4s;
+  }
+
+  &:hover
+  {
+    top: -70px;
+    height: 230px;
+    width: 300px;
+    left: 15%;
+    opacity: 1;
+  }
+
+  &:hover > #planet1span
+  {
+    transform: scale(1.2);
+  }
+}
 #albumcover:hover
 {
   @extend %slitviewanim;
   left: 250px;
   top: -78px;
 }
+
+#planetlink2
+{
+  display: inline-block;
+  height: 150px;
+  opacity: 0.5;
+  width: 150px;
+  top: -60px;
+  left: 20%;
+  margin: 10px;
+  transition: opacity .4s, height .4s, width .4s, left .4s, top .4s;
+  position: relative;
+  animation: float 5s ease-in-out infinite;
+  #planet2span
+  {
+    transition: opacity .4s;
+  }
+
+  &:hover
+  {
+    top: -70px;
+    height: 230px;
+    width: 300px;
+    left: 15%;
+      opacity: 1;
+  }
+
+  &:hover > #planet2span
+  {
+
+    transform: scale(1.2);
+  }
+}
+.imagelinks
+{
+  position: relative;
+  left: 13%;
+}
+
+#planetlink3
+{
+  display: inline-block;
+  height: 150px;
+  opacity: 0.5;
+  width: 150px;
+  top: -60px;
+  left: 20%;
+  margin: 10px;
+  transition: opacity .4s, height .4s, width .4s, left .4s, top .4s;
+  position: relative;
+  animation: float 7s ease-in-out infinite;
+  #planet3span
+  {
+    transition: opacity .4s;
+  }
+
+  &:hover
+  {
+    top: -70px;
+    height: 230px;
+    width: 300px;
+    left: 15%;
+    opacity: 1;
+  }
+
+  &:hover > #planet3span
+  {
+    transform: scale(1.2);
+  }
+}
+
+#spaceshuttle
+{
+  display: inline-block;
+  height: 150px;
+  opacity: 0.5;
+  width: 150px;
+  top: -60px;
+  left: 45%;
+  margin: 10px;
+  transition: opacity .4s, height .4s, width .4s, left .4s, top .4s;
+  position: relative;
+  animation: float 7s ease-in-out infinite;
+  #spaceshuttlespan
+  {
+    transition: opacity .4s;
+  }
+
+  &:hover
+  {
+    top: -70px;
+    height: 230px;
+    width: 300px;
+    left: 40%;
+    opacity: 1;
+  }
+
+  &:hover > #spaceshuttlespan
+  {
+    transform: scale(1.2);
+  }
+}
+
+
+
+
+
+#albumcover:hover
+{
+  @extend %slitviewanim;
+  left: 250px;
+  top: -78px;
+}
+
 
 #albumcover:hover ~ div
 {
@@ -152,9 +318,13 @@ a
 
 }
 
+.transitionbody
+{
+  animation: transitionIn 0.75s;
+}
 
 
-body{
+.indexbody{
   width: 100%;
      height: 100%;
      margin: 0px;
@@ -162,6 +332,28 @@ body{
   background-color: $brownpastel;
   overflow-x: hidden;
   overflow-y: hidden;
+}
+
+#aboutbody
+{
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  background-color: $brownpastel;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.aboutaudiobody
+{
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  background-color: $brownpastel;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 #concertcover
@@ -186,31 +378,25 @@ body{
   left: 52%;
   width: 768px;
   height: 432px;
-  clip-path: inset(20px 400px 0px 200px);
+  clip-path: inset(30px 400px 0px 200px);
   box-shadow: 10px 10px 5px grey;
   transition: transform .4s, clip-path .4s, left .4s, top .4s, opacity .4s;
   position: relative;
   animation: float 5s ease-in-out infinite;
-  &:hover{
-    @extend %slitviewanim;
-    transform: scale(1.2);
-    left: 54%;
-    clip-path: inset(0px 0px 0px 0px);
-  }
+
 }
 
 
 @keyframes float {
 	0% {
-		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+
 		transform: translatey(0px);
 	}
 	50% {
-		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+
 		transform: translatey(-20px);
 	}
 	100% {
-		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 		transform: translatey(0px);
 	}
 }
@@ -235,8 +421,24 @@ body{
 #concertcoverlink:hover ~ #concertcoverdescription
 {
   opacity: 1;
-  transform: 1.2;
+  transform: scale(1.2);
 }
+
+
+#title
+{
+  font-family: segoe ui;
+  font-weight: lighter;
+  text-align: center;
+  color: #F7F9E0
+}
+
+#facebookpic
+{
+  position: relative;
+  left: 43%;
+}
+
 #invisiblebox
 {
   height: 390px;
@@ -253,14 +455,66 @@ body{
       top: -90px;
       width: 450px;
       height: 450px;
+    }
+
+
+}
+
+#invisiblebox2
+{
+  height: 390px;
+  width: 200px;
+  opacity: 0;
+  top: -30px;
+  left: 65%;
+  position: absolute;
+  background-color: red;
+  z-index: 10;
+  animation: float 6s ease-in-out infinite;
+  &:hover{
+      left: 56%;
+      top: -90px;
+      width: 450px;
+      height: 450px;
+  }
+
+  &:hover ~ #violinProfcover
+  {
+    transform: scale(1.2);
+    left: 43%;
+    clip-path: inset(20px 150px 0px 200px);
+
+  }
+
+  &:hover ~ #concertcover
+  {
+    opacity: 0.2;
+  }
+  &:hover ~ #albumcover
+  {
+    opacity: 0.2;
   }
 
 }
+
 #links
 {
   position: relative;
   width: auto;
   height: 700px;
+}
+
+@keyframes transitionIn
+{
+  from{
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+
+  to{
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
 }
 
 
