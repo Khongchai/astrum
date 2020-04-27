@@ -72,13 +72,16 @@ p {
   animation: float 4s ease-in-out infinite;
 }
 
+.planetsimages {
+  display: inline-block;
+}
+
 #planetlink1 {
+  text-align: center;
   display: inline-block;
   height: 150px;
   opacity: 0.5;
   width: 130px;
-  top: -60px;
-  left: 20%;
   margin: 10px;
   transition: opacity 0.4s, height 0.4s, width 0.4s, left 0.4s, top 0.4s;
   position: relative;
@@ -88,10 +91,8 @@ p {
   transition: opacity 0.4s;
 }
 #planetlink1:hover {
-  top: -70px;
-  height: 230px;
-  width: 300px;
-  left: 15%;
+  height: 250px;
+  width: 250px;
   opacity: 1;
 }
 #planetlink1:hover > #planet1span {
@@ -108,8 +109,6 @@ p {
   height: 150px;
   opacity: 0.5;
   width: 150px;
-  top: -60px;
-  left: 20%;
   margin: 10px;
   transition: opacity 0.4s, height 0.4s, width 0.4s, left 0.4s, top 0.4s;
   position: relative;
@@ -119,10 +118,8 @@ p {
   transition: opacity 0.4s;
 }
 #planetlink2:hover {
-  top: -70px;
-  height: 230px;
-  width: 300px;
-  left: 15%;
+  height: 250px;
+  width: 250px;
   opacity: 1;
 }
 #planetlink2:hover > #planet2span {
@@ -163,8 +160,8 @@ p {
 }
 
 .imagelinks {
-  position: relative;
-  left: 13%;
+  width: 100%;
+  text-align: center;
 }
 
 #Venus {
@@ -198,18 +195,11 @@ p {
   position: relative;
 }
 
-.imagelinks {
-  position: relative;
-  left: 13%;
-}
-
 #planetlink3 {
   display: inline-block;
   height: 150px;
   opacity: 0.5;
   width: 150px;
-  top: -60px;
-  left: 20%;
   margin: 10px;
   transition: opacity 0.4s, height 0.4s, width 0.4s, left 0.4s, top 0.4s;
   position: relative;
@@ -219,10 +209,8 @@ p {
   transition: opacity 0.4s;
 }
 #planetlink3:hover {
-  top: -70px;
-  height: 230px;
-  width: 300px;
-  left: 15%;
+  height: 250px;
+  width: 250px;
   opacity: 1;
 }
 #planetlink3:hover > #planet3span {
@@ -434,11 +422,6 @@ p {
   font-weight: lighter;
   text-align: center;
   color: #F7F9E0;
-}
-
-#facebookpic {
-  position: relative;
-  left: 43%;
 }
 
 #invisiblebox {
