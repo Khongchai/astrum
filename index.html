@@ -7,7 +7,7 @@
     <title>My Portfolio</title>
 
   </head>
-  <body class="indexbody">
+  <body class="indexbody" style="z-index: 10;">
 
     <h1 class="titlepagename">
       <div id="titlepagetext">
@@ -15,7 +15,10 @@
       </div>
     </h1>
     <br>
-    <p id="subtitle">Where music meets science</p>
+    <div style="display: inline-block">
+      <p id="subtitle" >Where music meets science</p>
+    </div>
+
 
     <table id="topnavtab">
       <tr>
@@ -30,33 +33,45 @@
       <div id="links">
         <div id="divformove">
 
-
+<!--
         <a id="invisiblebox2" href="biography.html"></a>
         <p id="violinProfcoverdescription"><i>....WINGS TO THE MIND....</i></p>
         <a id="invisiblebox" href="about.html">
         </a>
+      -->
+      <!--
         <h1 id="concertcoverdescription2"><i>.....FLIGHT TO THE IMAGINATION AND LIFE TO EVERYTHING"<br></i> -Plato</h1>
+      -->
 
-        <div id="albumcover" class="forBlur">
+
+        <div id="albumcover" class="firstpagecover">
           <a id ="albumcoverlink"href="https://www.youtube.com/channel/UCagev05Hu01B8Q3p3CLFz2A?view_as=subscriber" target="_blank">
               <span><img src="pictures/albumcover.jpg" style="height: 100%; width: 100%; object-fit:contain"></span>
           </a>
         </div>
-        <p id="albumcoverdescription"><i>"MUSIC GIVES A SOUL TO THE UNIVERSE...</i></p>
+        <!--
+        <div id="albumcoverdescriptiondiv">
+          <p id="albumcoverdescription"><i>"MUSIC GIVES A SOUL TO THE UNIVERSE...</i></p>
+        </div>
+        -->
 
 
-        <div id="concertcover">
+        <div id="concertcover" class="firstpagecover">
           <a id="concertcoverlink" href="about.html">
             <img src="pictures/astrum logo.png" style="height: 100%; width: 100%; object-fit:contain">
           </a>
         </div>
 
 
-        <div id="violinProfcover" class="forBlur">
-          <a id ="violinProfcoverLink"  href="biography.html">
-            <span><img src="pictures/violinpic.jpg" alt="" style="height: 100%; width: 100%; object-fit:contain"></span>
+        <div id="violinProfcover" class="firstpagecover">
+          <a id="concertcoverlink" href="about.html">
+            <img src="pictures/violinpicsquare.png" style="height: 100%; width: 100%; object-fit:contain">
           </a>
         </div>
+        <div id="pagecover3" class="page_cover" style="opacity: 0; display: none"></div>
+
+
+
       </div>
       </div>
 

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>My Portfolio</title>
+
+    <style media="screen">
+
+      .transitionbody
+      {
+        height: 70%;
+      }
+      .blackbar
+      {
+        position: relative;
+        width:100%;
+        height: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-color: black;
+      }
+
+      .slideshowcontainer
+      {
+        margin: auto;
+        margin-top: 70px;
+        margin-bottom: 70px;
+        width: 700px;
+        height: 600px;
+
+        position: relative;
+      }
+
+      .img
+      {
+        vertical-align: middle;
+      }
+
+      .prev, .next
+      {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: weight;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+
+      .next
+      {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      .prev
+      {
+        left: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      .prev:hover, .next:hover
+      {
+        background-color: rgba(0,0,0,1);
+      }
+
+      .dot
+      {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: 0.6s ease;
+      }
+
+      .ative, .dot:hover{
+        background-color: #717171;
+      }
+
+      .fade
+      {
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+
+      @keyframes fade
+      {
+        from{opacity: .4}
+        to{opacity: 1}
+      }
+
+      /* on smaller screens, decrease text size */
+      @media only screen and (max-width: 300px)
+      {
+        .prev, .next, .text {font-size: 11px}
+      }
+    </style>
+
+  </head>
+  <body class="indexbody" style="position: relative">
+
+    <h1 class="titlepagename">
+      <div id="titlepagetext">
+        ASTRUM
+      </div>
+    </h1>
+    <br>
+    <div style="display: inline-block">
+      <p id="subtitle" >Where music meets science</p>
+    </div>
+
+
+    <table id="topnavtab">
+      <tr>
+        <th class="tableheader"><a href="index.html">Main</a></th>
+        <th class="tableheader"><a href="biography.html">Biography</a></th>
+        <th class="tableheader"><a href="contact.html">Contact</a></th>
+      </tr>
+    </table>
+    <img id="logo" src="pictures/astrum logo.png" height="100" width="100">
+
+    <div class="transitionbody" >
+      <div id="violinclipart"style="width: 100px; height: 100px; margin: 0 auto;">
+        <img src="pictures/violin.png" style="width: 100%; height: 100%">
+      </div>
+
+      <h1 id="title">THE VIOLINIST</h1>
+
+      <div class="blackbar">
+        <p style="color: #F7F9E0;font-weight: lighter; font-family: segoe ui; letter-spacing: 3px; width: 73%; margin: 0 auto; top: 30px; height: 100%; position: relative;">
+          Playing the violin since the age of 3, I have always been embalmed in music, and not a day had gone by where I thoughts have not in the slightest strayed into the realm of music. After joining the College of Music, Mahidol University in early 2012, my musical vocabulary has since then, been expanding to cover a wide variety of genres.
+
+​
+
+As a player, I have performed regularly as both a violinist and violist in orchestras, chamber groups, and Jazz combos. In 2019 alone, I have performed in Bach in Bali Festival, Bali; 150 yeares Thai-Austrian Relationship concert, Vienna, Austria; Thai-Hungarian Relationship Concert, Hungary; Clazz International Music Festival, Arcidosso, Italy. My styles include Classical, Jazz, Celtic, Folk and more.
+        </p>
+
+        <div class="slideshowcontainer">
+
+          <div class="mySlides fade">
+            <img src="pictures/violinpic.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides fade">
+            <img src="pictures/clazz2.webp" style="width:100%">
+          </div>
+
+          <div class="mySlides fade">
+            <img src="pictures/clazz3.webp" style="width:100%">
+          </div>
+
+          <div class="mySlides fade">
+            <img src="pictures/violinpic.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides fade">
+            <img src="pictures/bachinbali1.webp" style="width:100%">
+          </div>
+
+          <div class="mySlides fade">
+            <img src="pictures/viola.webp" style="width:100%">
+          </div>
+
+          <div class="mySlides fade">
+            <img src="pictures/gypsyjazz.webp" style="width:100%">
+          </div>
+
+          <div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          <br>
+          <div style="text-align: center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      var slideIndex = 1;
+      //run on start
+      showSlides(slideIndex);
+
+      function plusSlides(n)
+      {
+        //+= n because pass in only one value
+        showSlides(slideIndex += n);
+      }
+
+      function currentSlide(n)
+      {
+        showSlides(slideIndex = n)
+      }
+
+      //determins which slide to show
+      function showSlides(n)
+      {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+
+        //prevents slide from going out of bounds
+        if (n < 1)
+        {
+          slideIndex = slides.length;
+        }
+        if (slides.length < n)
+        {
+          slideIndex = 1;
+        }
+
+        for (i = 0; i < slides.length; i++)
+        {
+          //turn off all slides
+          slides[i].style.display = "none";
+        }
+
+        for (i = 0; i < dots.length; i++)
+        {
+          //turn off all dots
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+        //turn on only what is needed
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+      }
+
+
+    </script>
+
+
+  </body>
+</html>

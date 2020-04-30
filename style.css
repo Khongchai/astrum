@@ -6,26 +6,36 @@ a {
 #albumcover {
   clip-path: inset(0px 200px 10px 30px);
   box-shadow: 10px 10px 5px grey;
-  transition: transform 0.4s, clip-path 0.4s, left 0.4s, top 0.4s, opacity 0.4s;
-  position: relative;
+  transition: transform 0.4s, clip-path 0.4s ease, left 0.4s, top 0.4s, opacity 0.4s;
   /* values are from-top, from-right, from-bottom, from-left */
 }
 
-#concertcover:hover, #albumcover:hover {
+#violinProfcover, #concertcover, #albumcover {
+  z-index: 50;
+}
+
+#violinProfcover:hover, #concertcover:hover, #albumcover:hover {
   transform: scale(1.2);
   clip-path: inset(0px 0px 0px 0px);
 }
 
-#albumcoverdescription {
+.topbarcover {
+  width: 100%;
   position: absolute;
+  height: 30px;
+  top: auto;
+}
+
+#albumcoverdescriptiondiv {
+  display: inline-block;
+  text-align: center;
   color: white;
-  top: 10%;
   letter-spacing: 3px;
-  left: 30%;
   font-family: segoe ui;
   font-weight: lighter;
   font-size: 0px;
-  opacity: 0;
+  opacity: 1;
+  z-index: 12;
   transition: opacity 0.4s, left 0.4s;
 }
 
@@ -55,21 +65,21 @@ p {
   padding: 0;
 }
 
-#albumcover:hover ~ #albumcoverdescription {
+#albumcover:hover ~ #albumcoverdescriptiondiv {
   opacity: 1;
   font-size: 20px;
-  left: 50%;
 }
 
 #albumcover {
   height: 400px;
-  oacity: 1;
+  opacity: 0.3;
   width: 400px;
-  top: -60px;
-  left: 20%;
-  margin: 10x;
+  margin: 10px;
   animation-delay: 2s;
   animation: float 4s ease-in-out infinite;
+}
+#albumcover:hover {
+  opacity: 1;
 }
 
 .planetsimages {
@@ -97,11 +107,6 @@ p {
 }
 #planetlink1:hover > #planet1span {
   transform: scale(1.2);
-}
-
-#albumcover:hover {
-  left: 250px;
-  top: -78px;
 }
 
 #planetlink2 {
@@ -243,15 +248,6 @@ p {
   transform: scale(1.2);
 }
 
-#albumcover:hover {
-  left: 250px;
-  top: -78px;
-}
-
-#albumcover:hover ~ div {
-  opacity: 0.2;
-}
-
 .tableheader {
   border-right: 1px solid #826046;
   border-spacing: 2px;
@@ -299,7 +295,16 @@ p {
 }
 
 .transitionbody {
+  text-align: center;
   animation: transitionIn 0.75s;
+}
+
+#divformove {
+  text-align: center;
+}
+
+.firstpagecover {
+  display: inline-block;
 }
 
 .indexbody {
@@ -309,7 +314,7 @@ p {
   padding: 0px;
   background-color: #826046;
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 .listenbody {
@@ -324,12 +329,11 @@ p {
 
 #aboutbody {
   width: 100%;
-  height: 100%;
+  height: 900px;
   margin: 0px;
   padding: 0px;
   background-color: #826046;
   overflow-x: hidden;
-  overflow-y: auto;
 }
 
 .aboutaudiobody {
@@ -343,16 +347,16 @@ p {
 }
 
 #concertcover {
-  position: relative;
-  top: -460px;
-  left: 36%;
   width: 400px;
   height: 400px;
+  opacity: 0.3;
   clip-path: inset(0px 110px 0px 110px);
   box-shadow: 10px 10px 5px grey;
   transition: transform 0.4s, clip-path 0.4s, left 0.4s, top 0.4s, opacity 0.4s;
-  position: relative;
   animation: float 6s ease-in-out infinite;
+}
+#concertcover:hover {
+  opacity: 1;
 }
 
 #violinProfcoverdescription {
@@ -367,23 +371,23 @@ p {
   transition: opacity 0.2s, left 0.4s;
 }
 
-#invisiblebox2:hover ~ #violinProfcoverdescription {
-  opacity: 1;
-  left: 30%;
+#violinclipart {
+  animation: floatwithXwiggle 5s ease-in-out infinite;
+  position: relative;
+  top: -50px;
 }
 
 #violinProfcover {
-  position: relative;
-  top: -870px;
-  opacity: 1;
-  left: 52%;
-  width: 768px;
-  height: 432px;
-  clip-path: inset(30px 400px 0px 200px);
+  clip-path: inset(0px 30px 10px 200px);
   box-shadow: 10px 10px 5px grey;
-  transition: transform 0.4s, clip-path 0.4s, left 0.4s, top 0.4s, opacity 0.4s;
-  position: relative;
+  height: 400px;
+  opacity: 0.3;
+  width: 400px;
+  transition: opacity 0.4s, width 0.4s, height 0.4s, margin-right 0.4s, margin-left 0.4s, clip-path 0.4s;
   animation: float 5s ease-in-out infinite;
+}
+#violinProfcover:hover {
+  opacity: 1;
 }
 
 @keyframes float {
@@ -395,6 +399,17 @@ p {
   }
   100% {
     transform: translatey(0px);
+  }
+}
+@keyframes floatwithXwiggle {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(5px, -20px);
+  }
+  100% {
+    transform: translate(0px, 0px);
   }
 }
 #concertcoverdescription2 {
@@ -411,70 +426,19 @@ p {
   z-index: 11;
 }
 
-#invisiblebox:hover ~ #concertcoverdescription2 {
-  opacity: 1;
-  left: 27%;
-  top: 48%;
-}
-
 #title {
   font-family: segoe ui;
   font-weight: lighter;
   text-align: center;
+  position: relative;
+  top: -50px;
   color: #F7F9E0;
 }
 
-#invisiblebox {
-  height: 390px;
-  width: 200px;
-  opacity: 0;
-  top: -60px;
-  left: 42.5%;
-  position: absolute;
-  background-color: red;
-  z-index: 10;
-  animation: float 6s ease-in-out infinite;
-}
-#invisiblebox:hover {
-  left: 35%;
-  top: -90px;
-  width: 450px;
-  height: 450px;
-}
-
-#invisiblebox2 {
-  height: 390px;
-  width: 200px;
-  opacity: 0;
-  top: -30px;
-  left: 65%;
-  position: absolute;
-  background-color: red;
-  z-index: 10;
-  animation: float 6s ease-in-out infinite;
-}
-#invisiblebox2:hover {
-  left: 56%;
-  top: -90px;
-  width: 450px;
-  height: 450px;
-}
-#invisiblebox2:hover ~ #violinProfcover {
-  transform: scale(1.2);
-  left: 43%;
-  clip-path: inset(20px 150px 0px 200px);
-}
-#invisiblebox2:hover ~ #concertcover {
-  opacity: 0.2;
-}
-#invisiblebox2:hover ~ #albumcover {
-  opacity: 0.2;
-}
-
 #links {
-  position: relative;
+  text-align: center;
   width: auto;
-  height: 700px;
+  height: auto;
 }
 
 @keyframes transitionIn {
@@ -487,15 +451,6 @@ p {
     transform: rotateX(0deg);
   }
 }
-#invisiblebox:hover ~ .forBlur {
-  opacity: 0.2;
-}
-
-#invisiblebox:hover ~ #concertcover {
-  transform: scale(1.2);
-  clip-path: inset(0px 0px 0px 0px);
-}
-
 #logo {
   position: absolute;
   top: 50px;
