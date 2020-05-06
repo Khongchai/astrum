@@ -8,15 +8,23 @@
 
     <style media="screen">
 
+      p
+      {
+        position: relative;
+        display: grid;
+        z-index: 10;
+      }
+
       .transitionbody
       {
-        height: 70%;
+        height: 2000px;
+
       }
       .blackbar
       {
         position: relative;
         width:100%;
-        height: 100%;
+        height: 800px;
         margin-top: 10px;
         margin-bottom: 10px;
         background-color: black;
@@ -80,10 +88,11 @@
         background-color: #bbb;
         border-radius: 50%;
         display: inline-block;
-        transition: 0.6s ease;
+        transition: background-color 0.6s ease;
       }
 
-      .ative, .dot:hover{
+      .active, .dot:hover
+      {
         background-color: #717171;
       }
 
@@ -91,6 +100,8 @@
       {
         animation-name: fade;
         animation-duration: 1.5s;
+
+
       }
 
       @keyframes fade
@@ -109,11 +120,14 @@
   </head>
   <body class="indexbody" style="position: relative">
 
+    <!--this h1 is wrongly formatted, but too lazy to change-->
     <h1 class="titlepagename">
-      <div id="titlepagetext">
-        ASTRUM
+      <div id="titlepagediv">
+        <h1 id="titlepagetext">ASTRUM</h1>
       </div>
     </h1>
+
+
     <br>
     <div style="display: inline-block">
       <p id="subtitle" >Where music meets science</p>
@@ -127,76 +141,116 @@
         <th class="tableheader"><a href="contact.html">Contact</a></th>
       </tr>
     </table>
-    <img id="logo" src="pictures/astrum logo.png" height="100" width="100">
+    <img id="logo" src="pictures/astrum logo.png" height="100" width="100" style="z-index: 9">
+
+    <div  style="position: absolute; width: 100%; background-color: #826046; height: 320px; top: 200px; z-index: 8;">
+
+    </div>
 
     <div class="transitionbody" >
-      <div id="violinclipart"style="width: 100px; height: 100px; margin: 0 auto;">
+      <div  id="violinclipart"style="width: 100px; height: 100px; margin: 0 auto; z-index: 9">
         <img src="pictures/violin.png" style="width: 100%; height: 100%">
       </div>
 
-      <h1 id="title">THE VIOLINIST</h1>
+      <h1 id="title" style="z-index:9">THE VIOLINIST</h1>
+
 
       <div class="blackbar">
-        <p style="color: #F7F9E0;font-weight: lighter; font-family: segoe ui; letter-spacing: 3px; width: 73%; margin: 0 auto; top: 30px; height: 100%; position: relative;">
-          Playing the violin since the age of 3, I have always been embalmed in music, and not a day had gone by where I thoughts have not in the slightest strayed into the realm of music. After joining the College of Music, Mahidol University in early 2012, my musical vocabulary has since then, been expanding to cover a wide variety of genres.
+        <section class="movediv" data-rate="0.55" style="display: grid; top: 150px; position: relative">
+          <p class ="parallax"  style="color: #F7F9E0;font-weight: lighter; font-family: segoe ui; letter-spacing: 3px; width: 73%; margin: 0 auto; top: 30px; height: 100%; position: relative;">
+            Playing the violin since the age of 3, I have always been embalmed in music, and not a day had gone by where I thoughts have not in the slightest strayed into the realm of music. After joining the College of Music, Mahidol University in early 2012, my musical vocabulary has since then, been expanding to cover a wide variety of genres.
 
-​
+  ​
 
-As a player, I have performed regularly as both a violinist and violist in orchestras, chamber groups, and Jazz combos. In 2019 alone, I have performed in Bach in Bali Festival, Bali; 150 yeares Thai-Austrian Relationship concert, Vienna, Austria; Thai-Hungarian Relationship Concert, Hungary; Clazz International Music Festival, Arcidosso, Italy. My styles include Classical, Jazz, Celtic, Folk and more.
-        </p>
+  As a player, I have performed regularly as both a violinist and violist in orchestras, chamber groups, and Jazz combos. In 2019 alone, I have performed in Bach in Bali Festival, Bali; 150 yeares Thai-Austrian Relationship concert, Vienna, Austria; Thai-Hungarian Relationship Concert, Hungary; Clazz International Music Festival, Arcidosso, Italy. My styles include Classical, Jazz, Celtic, Folk and more.
+          </p>
 
-        <div class="slideshowcontainer">
+          <div class="slideshowcontainer" style="z-index: 8">
 
-          <div class="mySlides fade">
-            <img src="pictures/violinpic.jpg" style="width:100%">
-          </div>
+            <div class="mySlides fade">
+              <img src="pictures/violinpic.jpg" style="width:100%">
+            </div>
 
-          <div class="mySlides fade">
-            <img src="pictures/clazz2.webp" style="width:100%">
-          </div>
+            <div class="mySlides fade">
+              <img src="pictures/clazz2.webp" style="width:100%">
+            </div>
 
-          <div class="mySlides fade">
-            <img src="pictures/clazz3.webp" style="width:100%">
-          </div>
+            <div class="mySlides fade">
+              <img src="pictures/clazz3.webp" style="width:100%">
+            </div>
 
-          <div class="mySlides fade">
-            <img src="pictures/violinpic.jpg" style="width:100%">
-          </div>
+            <div class="mySlides fade">
+              <img src="pictures/bachinbali1.webp" style="width:100%">
+            </div>
 
-          <div class="mySlides fade">
-            <img src="pictures/bachinbali1.webp" style="width:100%">
-          </div>
+            <div class="mySlides fade">
+              <img src="pictures/viola.webp" style="width:100%">
+            </div>
 
-          <div class="mySlides fade">
-            <img src="pictures/viola.webp" style="width:100%">
-          </div>
+            <div class="mySlides fade">
+              <img src="pictures/gypsyjazz.webp" style="width:100%">
+            </div>
 
-          <div class="mySlides fade">
-            <img src="pictures/gypsyjazz.webp" style="width:100%">
-          </div>
+            <div>
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            <div style="text-align: center">
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+              <span class="dot" onclick="currentSlide(4)"></span>
+              <span class="dot" onclick="currentSlide(5)"></span>
+              <span class="dot" onclick="currentSlide(6)"></span>
+            </div>
 
-          <div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-          </div>
-          <br>
-          <div style="text-align: center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
-            <span class="dot" onclick="currentSlide(5)"></span>
-            <span class="dot" onclick="currentSlide(6)"></span>
-            <span class="dot" onclick="currentSlide(7)"></span>
+        </section>
 
 
-          </div>
         </div>
+        <div id="composerContainer" style="width: 100%; background: #826046; height: 320px; position: relative: display: inline: top: -50px">
+
+          <div  id="violinclipart"style="width: 200px; height: 100px; z-index: 9; position: relative; top: 30px; margin: 0 auto">
+            <img src="pictures/FLStudiologo.png" style="width: 200px; height: 100%;">
+          </div>
+          <h1 id="title" style="z-index:9;  top: 30px">THE COMPOSER</h1>
+        </div>
+
+      </div>
+
+
       </div>
     </div>
 
+
+
+
+    </div>
+
+
+
+
+
     <script type="text/javascript">
+
+      window.addEventListener('scroll', function(){
+        const descriptions = document.querySelectorAll(".movediv");
+
+        var scrollObjLength = descriptions.length;
+        var i = 0;
+        for (i = 0; i < scrollObjLength; i++)
+       {
+          var posYshift = window.pageYOffset * descriptions[i].dataset.rate;
+          descriptions[i].style.transform = 'translate3d(0px, -'+posYshift+'px, 0px)';
+          console.log(posYshift);
+        }
+
+      });
+
+
       var slideIndex = 1;
+      var dotsFORDEBUG;
       //run on start
       showSlides(slideIndex);
 
@@ -215,8 +269,11 @@ As a player, I have performed regularly as both a violinist and violist in orche
       function showSlides(n)
       {
         var i;
+
+        //get a list of elements
         var slides = document.getElementsByClassName("mySlides");
         var dots = document.getElementsByClassName("dot");
+        dotsFORDEBUG = document.getElementsByClassName("dot");
 
         //prevents slide from going out of bounds
         if (n < 1)
@@ -240,10 +297,14 @@ As a player, I have performed regularly as both a violinist and violist in orche
           dots[i].className = dots[i].className.replace(" active", "");
         }
 
-        //turn on only what is needed
+        //set display to block; visible
         slides[slideIndex-1].style.display = "block";
+
+        //concatenate class name, resulting in being a member of 2 classes
         dots[slideIndex-1].className += " active";
       }
+
+
 
 
     </script>

@@ -383,13 +383,25 @@ a
 
 }
 
+#titlepagediv
+{
+
+  line-height: 4em;
+  position: absolute;
+  width: 100%;
+  margin-right: 0px;
+
+}
+
 #titlepagetext
 {
+  width: 100px;
   line-height: 4em;
   position: relative;
-  left: 200px;
   font-size: 1.5em;
-  margin-right: 10px;
+  margin-right: 0px;
+  bottom: 30px;
+  left: 200px;
   opacity: 1 !important;
   color: $brownpastel;
 
