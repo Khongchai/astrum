@@ -6,12 +6,19 @@
     <title>My Portfolio</title>
 
     <style media="screen">
-      #mercuryparagraph
-      {
-        width: 100%;
-        length: 100%;
-        background-color: black;
-      }
+    #planetsContainer
+    {
+      width: 100%;
+      height: 200px;
+    }
+    .transitionbody
+    {
+      position: absolute;
+      width: 100%;
+      top: 250px;
+
+    }
+
     </style>
 
   </head>
@@ -34,65 +41,15 @@
       </tr>
     </table>
     <img id="logo" src="pictures/astrum logo.png" height="100" width="100">
-    <div class="transitionbody">
+    <div class="transitionbody" style="height: 100%">
       <h1 style="text-spacing: 3px; text-align: center; font-family: segoe ui; font-weight: lighter; color: #F7F9E0">ABOUT PLANETS</h1>
-
-      <div >
-        <div id="Mercury" class="forBlur">
-              <span id="Mercuryspan">
-                <a href="#mercuryparagraph">
-                <img src="pictures/mercury.png" style="height: 100%; width: 100%; object-fit:contain">
-                </a>
-              </span>
-
-              <div >
-              </div>
+      <div id="planetsContainer">
+        <div class="planetsimages" id=mercuryimage>
+          <a href="#"><img src="pictures/Mercury.png" style="height: 200px; width: 200px; object-fit:contain"></a>
         </div>
-        <p id="mercuryparagraph" style="text-spacing: 3px; text-align: center; font-family: segoe ui; font-weight: lighter; color: #F7F9E0">
-          MERCURY<br><br>
-          This small but deadly planet,
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-        </p>
 
       </div>
-
-      <div >
-        <div id="Venus" class="forBlur">
-              <span id="Venusspan">
-                <a href="#Venusparagraph">
-                <img src="pictures/venus.png" style="height: 100%; width: 100%; object-fit:contain">
-                </a>
-              </span>
-
-              <div >
-              </div>
-        </div>
-        <p id="Venusparagraph" style="text-spacing: 3px; text-align: center; font-family: segoe ui; font-weight: lighter; color: #F7F9E0">
-          VENUS<br><br>
-          Her reddish beauty is a ,
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-        </p>
-
-      </div>
-        </div>
+    </div>
 
 
   </body>

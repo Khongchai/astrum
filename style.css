@@ -84,6 +84,14 @@ p {
 
 .planetsimages {
   display: inline-block;
+  float: left;
+  margin-left: 40px;
+  animation: float 4s ease-in-out infinite;
+  opacity: 0.5;
+  transition: opacity 0.4s;
+}
+.planetsimages:hover {
+  opacity: 1;
 }
 
 #planetlink1 {
@@ -297,7 +305,7 @@ p {
   position: relative;
   font-size: 1.5em;
   margin-right: 0px;
-  bottom: 30px;
+  bottom: -10px;
   left: 200px;
   opacity: 1 !important;
   color: #826046;
@@ -332,8 +340,6 @@ p {
   margin: 0px;
   padding: 0px;
   background-color: #826046;
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 
 #aboutbody {
