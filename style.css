@@ -39,6 +39,14 @@ a {
   transition: opacity 0.4s, left 0.4s;
 }
 
+.fadeinAnim {
+  animation: transitionIn 0.75s;
+}
+
+.fadeoutAnim {
+  animation: transitionOut 0.75s;
+}
+
 #firstsettext {
   text-align: center;
   vertical-align: top;
@@ -82,16 +90,59 @@ p {
   opacity: 1;
 }
 
-.planetsimages {
+.topim {
   display: inline-block;
   float: left;
-  margin-left: 40px;
-  animation: float 4s ease-in-out infinite;
+  margin-left: 45px;
+  margin-top: 40px;
   opacity: 0.5;
   transition: opacity 0.4s;
 }
-.planetsimages:hover {
+.topim:hover {
   opacity: 1;
+}
+
+#mercuryimage {
+  animation: float 2s ease-in-out infinite;
+}
+
+#venusimage {
+  animation: float 3.236s ease-in-out infinite;
+}
+
+#earthimage {
+  animation: float 5.236s ease-in-out infinite;
+}
+
+#marsimage {
+  animation: float 8.472s ease-in-out infinite;
+}
+
+#jupiterimage {
+  animation: float 13.702s ease-in-out infinite;
+}
+
+#saturnimage {
+  animation: float 22.18s ease-in-out infinite;
+}
+
+#uranusimage {
+  animation: float 35.888s ease-in-out infinite;
+}
+
+#neptuneimage {
+  animation: float 58.068s ease-in-out infinite;
+}
+
+#saturnimage {
+  position: relative;
+  top: -50px;
+}
+
+#neptuneimage {
+  position: relative;
+  top: -50px;
+  margin-left: 10px;
 }
 
 #planetlink1 {
@@ -139,6 +190,15 @@ p {
   transform: scale(1.2);
 }
 
+.planetsubdesctext {
+  font-weight: lighter;
+  transition: opacity 0.4s;
+  opacity: 0;
+  letter-spacing: 2.5px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #F7F9E0;
+}
+
 .blackcover {
   position: fixed;
   width: 100%;
@@ -175,6 +235,7 @@ p {
 .imagelinks {
   width: 100%;
   text-align: center;
+  margin: 0 auto;
 }
 
 #Venus {
@@ -463,6 +524,16 @@ p {
   }
   to {
     opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+@keyframes transitionOut {
+  from {
+    opacity: 1;
+    transform: rotateX(-10deg);
+  }
+  to {
+    opacity: 0;
     transform: rotateX(0deg);
   }
 }

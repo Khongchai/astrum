@@ -6,23 +6,82 @@
     <title>My Portfolio</title>
 
     <style media="screen">
+
+      body
+      {
+        overflow-x:hidden;
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        background-color: black;
+      }
     #planetsContainer
     {
       width: 100%;
       height: 200px;
+      position: absolute;
+      top: 70px;
+      min-width: 2000px;
+      z-index: 9;
     }
     .transitionbody
     {
       position: absolute;
       width: 100%;
       top: 250px;
+    }
+    .planetsinfo
+    {
+      width: 100%;
+      position: relative;
+      height: 1550px;
+      background-color: black;
+      display: inline-block;
+      margin: 0 auto;
+      top: 180px;
+    }
+
+    .planetdesctext
+    {
+      font-weight: lighter;
+      transition: opacity .4s;
+      letter-spacing: 2.5px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #F7F9E0;
 
     }
+
+    .planetsubdesctext
+    {
+      cursor: context-menu;
+      font-weight: lighter;
+      letter-spacing: 2.5px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #F7F9E0;
+      font-style: italic;
+
+    }
+
+    .transitionbody
+    {
+      text-align: left;
+    }
+
+    #mars-info-lost
+    {
+      
+      display: none;
+    }
+
+
+
+   
 
     </style>
 
   </head>
-  <body class="listenbody">
+  <body >
     <h1 class="titlepagename">
       <div id="titlepagetext">
         ASTRUM
@@ -36,19 +95,185 @@
     <table id="topnavtab">
       <tr>
         <th class="tableheader"><a href="index.html">Main</a></th>
-        <th class="tableheader"><a href="biography.html">Biography</a></th>
         <th class="tableheader"><a href="contact.html">Contact</a></th>
       </tr>
     </table>
     <img id="logo" src="pictures/astrum logo.png" height="100" width="100">
     <div class="transitionbody" style="height: 100%">
-      <h1 style="text-spacing: 3px; text-align: center; font-family: segoe ui; font-weight: lighter; color: #F7F9E0">ABOUT PLANETS</h1>
+      <h1 style="letter-spacing: 3px; text-align: center; font-family: segoe ui; font-weight: lighter; color: #F7F9E0">ABOUT PLANETS</h1>
+      <h6 id="soundcheck"style="letter-spacing: 3px; text-align: center; font-family: segoe ui; font-weight: lighter; color: #F7F9E0; position: relative; top: -20px; z-index: 10; cursor: pointer" onclick="setsound()">SOUND ON</h6>
       <div id="planetsContainer">
-        <div class="planetsimages" id=mercuryimage>
-          <a href="#"><img src="pictures/Mercury.png" style="height: 200px; width: 200px; object-fit:contain"></a>
+        <div class="topim" id="mercuryimage">
+          <a href="#"><img src="pictures/Mercury.png" style="height: 120px; width: 120px; object-fit:contain"></a>
+        </div>
+
+        <div class="topim" id="venusimage">
+          <a href="#"><img src="pictures/Venus.png" style="height: 120px; width: 120px; object-fit:contain"></a>
+        </div>
+
+        <div class="topim" id="earthimage">
+          <a href="#"><img src="pictures/Earth.png" style="height: 120px; width: 120px; object-fit:contain"></a>
+        </div>
+
+        <div class="topim" id="marsimage" onclick="displaysonClick('marsframe')">
+          <a href="#"><img src="pictures/Mars.png" style="height: 120px; width: 120px; object-fit:contain"></a>
+        </div>
+
+        <div class="topim" id="jupiterimage">
+          <a href="#"><img src="pictures/Jupiter.png" style="height: 120px; width: 120px; object-fit:contain"></a>
+        </div>
+
+        <div class="topim" id="saturnimage">
+          <a href="#"><img src="pictures/Saturn.png" style="height: 220px; width: 220px; object-fit:contain"></a>
+        </div>
+
+        <div class="topim" id="uranusimage">
+          <a href="#"><img src="pictures/Uranus.png" style="height: 120px; width: 120px; object-fit:contain"></a>
+        </div>
+
+        <div class="topim" id="neptuneimage">
+          <a href="#"><img src="pictures/Neptune.png" style="height: 220px; width: 220px; object-fit:contain"></a>
         </div>
 
       </div>
+
+      <div class="planetsinfo">
+
+        <div  id="marsframe" style="display: none; transition: display .4s" data-src="sounds/Mars.mp3">
+          <iframe src="https://eyes.nasa.gov/apps/orrery/#/mars?time=2020-05-08T07:07:24&close=true" frameborder="0" style="width: 100%; height: 900px"></iframe>
+
+          <div id="marsinfo" style="display: inline-block; position: relative; width: 46%; margin-left: 4%; text-justify: inter-character;text-align: justify;">
+            <p class="planetdesctext">
+              <span style="cursor: help" onmouseover="displaysonOver('mars-info-main')" onmouseout="displaysonOut('mars-info-main')"><strong>Mars</strong>: </span>
+
+          The year is now 34 AE (After Earth). Humanity has <span onmouseover="displaysonOver('mars-info-lost')" onmouseout="displaysonOut('mars-info-lost')" style="cursor: help;"><strong>lost</strong></span> its planet and has been travelling through space in search of a new home. The AD millennia ended with entire civilizations crumbling into dust and its population annihilated to a mere quarter of 7 billion. Once a planet brimming with life, it is now a skeleton of its former glory.
+
+          Three large aircrafts approach upon the red planet of Mars – once a red star in the night sky is now a looming orb of a second home that is as unwelcoming as its barren landscape. Touching upon the desert sand, heartbeats are loud against the whispers of the storm. They shiver at the sight of a cold, dead vast expanse of rocks on the dusty surface. Their steps are light and they float through the air just by a brush of a footstep. As one, they venture into uncharted territory, blinded by the winds of the storm and the dust that dances across their vision.
+
+          People huddle together for comfort as they walk towards a peak that touches the scarlet skies of its toxic atmosphere. It is Olympus Mons and it rises as a beacon of shelter. There is a settlement by their predecessors and they must arrive before the setting of the sun. As they reach the foot of the mountain, they see the shadows of the very first explorers from Earth standing side by side, their solar panels glinting in the light, and there humanity is reminded of one's own inquisitive nature.
+
+          Opportunity and Curiosity.
+            </p>
+
+          </div>
+
+          <div id="marsAdditionalInfo" style="margin-right: 4%; position: relative; width: 43%; text-align: right; float: right">
+            <p class="planetsubdesctext"id="mars-info-lost" >
+              The space race to send people to Mars has never been more fierce, with  <span ><img src="pictures/ColonyOnMarsIII.jpg"style="width: 130px; float: right; margin: 10px; "></span>private companies such as Blue Origin,
+              SpaceX, Boeing, etc. working closely with government space agencies around the world to plan out our species' next biggest step.
+              <br>
+              <br>
+              In our effort to establish the second human colony on Mars, not only do we have to solve engineering problems, but argricultural, geological, medical, psychological, and many more
+              aspects as well. To build a self-sustainable colony on Mars, we have to ensure that it is able to cater for itself (it would take
+              too long for Earth's resource to reach Mars) when it comes to resource, be it for humans or machines. <span><img src="pictures/MarsColony.jpg"style="width: 160px; float: left; margin: 10px; "></span>Therefore, in the not-so-far-away future,
+               not only will we need engineers and scientists on Mars, but teachers, gardeners, musicians, artists, construction workers, doctors; people from all
+               facets of life will have to work hand-in-hand to fulfill the goal of humankind becoming the true space-faring species.
+              <br>
+              <br>
+              It is also exciting to see what Earth could benefit from such technological advancements; how we can apply those tech to help us improve
+              the quality of our first home.
+            </p>
+
+            <p class="planetsubdesctext" id="mars-info-main" >
+              For Mars, I intended for the soundscape to exude somewhat of an eerie, and bleak atmosphere. The accompanying story depicts a scene where
+              humans slowly evacuate from the dying planet Earth. As they approach the looming red planet, several thoughts pop up in their heads, from
+              the scarcity of resource to the vast and empty inhabitable landscape on which to become their new home, most likely until their last breath.
+              
+              <br>
+              <br>
+              The musical elements are a constant heartbeats, a human element, against the background of uncertain Mars elements, ranging from
+              the scratchy dust-wind, to the haunting cry of the far-away storm hovering in the lower atmosphere. It is sonic juxtaposition of human against 
+              nature on this dead planet.
+              <br>
+              <img src="pictures/MarsMountSharp.jpg" style="height: 130px; float: right">
+
+            </p>
+          </div>
+          
+        </div>
+
+        <footer style="display: block"></footer>
+          
+      </div>
+
+      <script>
+        var audio; 
+        var check = true; 
+
+        function setsound()
+        {
+          if (check)
+          {
+            if (audio != null)
+            {
+              audio.pause();
+              audio.currentTime = 0;
+            }
+            check = false;
+            document.querySelector("#soundcheck").innerHTML = "SOUND OFF"
+            
+          }
+          else
+          {
+            check = true;
+            document.querySelector("#soundcheck").innerHTML = "SOUND ON"
+          }
+        }
+
+        function displaysonClick(id)
+        {
+          var toBeDisplayed = document.getElementById(id);
+          toBeDisplayed.src = toBeDisplayed.dataset.src;
+          if (toBeDisplayed.style.display === "none")
+          {
+            if (check)
+            {
+              audio = new Audio(toBeDisplayed.src);
+              audio.volume = 0.6;
+              audio.play();
+            }
+            
+            toBeDisplayed.style.display = "block";
+          }
+          else
+          {
+            //check if to pause or to play a new audio sound with
+            //if src of both files are equal; comes from the same destination: pause, else start the new sound
+            if (audio != null)
+            {
+              audio.pause();
+              audio.currentTime = 0;
+            }
+            toBeDisplayed.style.display = "none";
+            
+          }
+
+        }
+
+        function displaysonOver(id)
+        {
+          var toBeDisplayed = document.getElementById(id);
+          toBeDisplayed.style.display = "block"; 
+          toBeDisplayed.className += " fadeinAnim";
+          toBeDisplayed.style.opacity = 1;
+          
+        }
+
+        function displaysonOut(id)
+        {
+          var toBeDisplayed = document.getElementById(id);
+          toBeDisplayed.style.opacity = 0;
+          toBeDisplayed.style.display = "none";
+          toBeDisplayed.className = "planetsubdesctext";
+               
+        }
+
+
+
+      </script>
+
+        
+      
     </div>
 
 
