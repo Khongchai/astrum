@@ -135,10 +135,12 @@ a
 
 .topim
 {
+
+  text-align: center;
   display: inline-block;
-  float: left;
   margin-left: 45px;
   margin-top: 40px;
+  position: relative;
   opacity: 0.5;
   transition: opacity .4s;
   &:hover
@@ -170,28 +172,21 @@ a
 #saturnimage
 {
   animation: float 22.180s ease-in-out infinite;
+  top: 40px;
 }
 #uranusimage
 {
   animation: float 35.888s ease-in-out infinite;
+  top: 30px;
+  margin-left: -10px;
 }
 #neptuneimage
 {
+  margin-left: -10px;
   animation: float 58.068s ease-in-out infinite;
 }
 
-#saturnimage
-{
-  position: relative;
-  top: -50px;
-}
 
-#neptuneimage
-{
-  position: relative;
-  top: -50px;
-  margin-left: 10px;
-}
 
 #planetlink1
 {
