@@ -100,8 +100,9 @@
     <img id="logo" src="pictures/astrum logo.png" height="100" width="100">
     <div class="transitionbody" style="height: 100%">
       <h1 style="letter-spacing: 3px; text-align: center; font-family: segoe ui; font-weight: lighter; color: #F7F9E0">ABOUT PLANETS</h1>
-      <h5 style="font-style: italic; letter-spacing: 3px; float: left; position: absolute; color: #F7F9E0; margin-left: 30px; font-family: segoe ui; font-weight: lighter; top: 30px;">Stories by: Lourna Quinto Mydes</h5>
+      <h5 style="font-style: italic; letter-spacing: 3px; float: left; position: absolute; color: #F7F9E0; margin-left: 30px; font-family: segoe ui; font-weight: lighter; top: 30px;">Stories by: Lourna Mydes Quinto</h5>
       <h6 id="soundcheck"style="letter-spacing: 3px; text-align: center; font-family: segoe ui; font-weight: lighter; color: #F7F9E0; position: relative; top: -20px; z-index: 10; cursor: pointer" onclick="setsound()">SOUND ON</h6>
+
         <div id="planetsContainer">
           <div class="topim" id="mercuryimage">
             <a href="#"><img src="pictures/Mercury.png" style="height: 120px; width: 120px; object-fit:contain"></a>
@@ -111,7 +112,7 @@
             <a href="#"><img src="pictures/venus.png" style="height: 120px; width: 120px; object-fit:contain"></a>
           </div>
   
-          <div class="topim" id="earthimage">
+          <div class="topim" id="earthimage" onclick="displaysonClick('earthframe')">
             <a href="#"><img src="pictures/earth.png" style="height: 120px; width: 120px; object-fit:contain"></a>
           </div>
   
@@ -135,25 +136,49 @@
             <a href="#"><img src="pictures/Neptune.png" style="height: 120px; width: 120px; object-fit:contain"></a>
           </div>
         </div>
+        
 
       </div>
 
       <div class="planetsinfo">
 
-        <div  id="marsframe" style="display: none; transition: display .4s" data-src="sounds/Mars.mp3">
+        <div  id="earthframe" class="planetsframe" style="display: none; transition: display .4s" data-src="sounds/Earth V1.wav">
+          <iframe src="https://eyes.nasa.gov/apps/orrery/#/earth?&close=true" frameborder="0" style="width: 100%; height: 900px"></iframe>
+          <div id="earthinfo" style="display: inline-block; position: relative; width: 46%; margin-left: 4%; text-justify: inter-character;text-align: justify;">
+            <p class="planetdesctext">
+              <strong>Earth</strong>: There is a saying shared across the universe.
+
+              Planet 3627-7 is a special world. It is a liquid world that fills up three fourths of its mass with water, yet sustains billions of species of creatures. Its residents live on the tallest peaks of the coldest mountains, to the hottest plains of its barren deserts, and into the depths of its oceans. It is a world filled with an array of color unlike any other planet in its solar system. The firmament protects it from the radiation of the sun. Frozen water falls from the sky like fine white dust for a quarter of a cycle. It is filled with these things called trees that release gases that sustains life in its atmosphere, and that it is a world filled with creatures as tall as the trees and as small as the pebbles on the ground. 
+              <br>
+              <br>
+              It is said that the world’s rulers, creatures called humans, are the oddest of all. They live with plants and beasts that can kill them, but they have dominion above them all. They breathe in gases that burn them slowly in the inside at the rate of about 80 cycles around the sun. They have created settlements where temperatures dip to as low as -100 degrees and as high as 50 degrees and still reproduce. They capture the wind in the sails of their contraptions and journey across the waters. They then take the wind as their own and fly above the sky, defying their planet’s own gravity. The sun’s solar winds hit its atmosphere but instead of fearing it, they stare in awe at the lights they have named Aurora Borealis. As daylight in the night, these northern lights weaved amongst the silver clouds in a hypnotic dance, distorting in an array of green and purple with tongues of reds and oranges flickering in between. 
+              <br>
+              <br>
+              But they were not satisfied with the sky. These humans decided to venture out of their world and into the outer space, touching upon their moon and sending their metal creature into the depths of the universe light-years away, seeking others like them – hoping to find a connection – hopelessly lost. But the universe kept silent.
+              <br>
+              <br>
+              But the universe speaks of them. They speak of the terrible and marvelous things of the complex planet. The planet these humans call Earth.
+                
+            </p>
+
+          </div >
+          
+        </div>
+
+        <div  id="marsframe" class="planetsframe" style="display: none; transition: display .4s" data-src="sounds/Mars.mp3">
           <iframe src="https://eyes.nasa.gov/apps/orrery/#/mars?&close=true" frameborder="0" style="width: 100%; height: 900px"></iframe>
 
           <div id="marsinfo" style="display: inline-block; position: relative; width: 46%; margin-left: 4%; text-justify: inter-character;text-align: justify;">
             <p class="planetdesctext">
               <span style="cursor: help" onmouseover="displaysonOver('mars-info-main')" onmouseout="displaysonOut('mars-info-main')"><strong>Mars</strong>: </span>
 
-          The year is now 34 AE (After Earth). Humanity has lost its planet and has been travelling through space in search of a new <span onmouseover="displaysonOver('mars-info-lost')" onmouseout="displaysonOut('mars-info-lost')" style="cursor: help;"><strong>home</strong></span>. The AD millennia ended with entire civilizations crumbling into dust and its population <span onmouseover="displaysonOver('mars-info-annihilated')" onmouseout="displaysonOut('mars-info-annihilated')" style="cursor: help;"><strong>annihilated</strong></span> to a mere quarter of 7 billion. Once a planet brimming with life, it is now a skeleton of its former glory.
-
+           The year is now 34 AE (After Earth). Humanity has lost its planet and has been travelling through space in search of a new <span onmouseover="displaysonOver('mars-info-lost')" onmouseout="displaysonOut('mars-info-lost')" style="cursor: help;"><strong>home</strong></span>. The AD millennia ended with entire civilizations crumbling into dust and its population <span onmouseover="displaysonOver('mars-info-annihilated')" onmouseout="displaysonOut('mars-info-annihilated')" style="cursor: help;"><strong>annihilated</strong></span> to a mere quarter of 7 billion. Once a planet brimming with life, it is now a skeleton of its former glory.
+            
           Three large aircrafts approach upon the <span style="cursor: help" onmouseover="displaysonOver('mars-info-red')" onmouseout="displaysonOut('mars-info-red')"><strong>red</strong></span> planet of Mars – once a twinkling red dot <span span onmouseover="displaysonOver('mars-info-nightsky')" onmouseout="displaysonOut('mars-info-nightsky')" style="cursor: help"><strong>in the night sky </strong></span>is now a looming orb of a second home that is as unwelcoming as its <span onmouseover="displaysonOver('mars-info-barren')" onmouseout="displaysonOut('mars-info-barren')" style="cursor: help;"><strong>barren landscape.</strong></span> Touching upon the desert sand, heartbeats are loud against the whispers of the <span style="cursor: help" onmouseover="displaysonOver('mars-info-storm')" onmouseout="displaysonOut('mars-info-storm')"><strong>storm.</strong></span> 
           They shiver at the sight of a cold, dead vast expanse of rocks on the dusty surface. Their steps are <span style="cursor: help" onmouseover="displaysonOver('mars-info-gravity')" onmouseout="displaysonOut('mars-info-gravity')" ><strong>light</strong></span> and they float through the air just by a brush of a footstep. As one, they venture into uncharted territory, blinded by the winds of the storm and the dust that dances across their vision.
-
+          
           People huddle together for comfort as they walk towards a peak that touches the scarlet skies of its toxic atmosphere. It is <span style="cursor: help" onmouseover="displaysonOver('mars-info-mountain')" onmouseout="displaysonOut('mars-info-mountain')"><strong>Olympus Mons</strong></span> and it rises as a beacon of shelter. There is a settlement by their predecessors and they must arrive before the setting of the sun. As they reach the foot of the mountain, they see the shadows of the very <span><strong style="cursor: help" onmouseover="displaysonOver('mars-info-rovers')" onmouseout="displaysonOut('mars-info-rovers')">first explorers</strong></span> from Earth standing side by side, their solar panels glinting in the light, and there humanity is reminded of one's own inquisitive nature.
-
+          
           Opportunity and Curiosity.
             </p>
 
@@ -277,12 +302,14 @@
               with Curiosity still functioning and going strong in 2020.
               <br>
               <img src="pictures/OpportunityPartingShot.jpg" alt="" style="width: 100%; margin-top: 10px">
-            </p >
-
-            
+            </p >      
           </div>
+
+          
           
         </div>
+
+
 
         
           
@@ -291,6 +318,7 @@
       <script>
         var audio; 
         var check = true; 
+        var theThingbeingDisplayed = null;
 
         function setsound()
         {
@@ -309,22 +337,45 @@
           {
             check = true;
             document.querySelector("#soundcheck").innerHTML = "SOUND ON";
+
+            //if something displayed and user click on SOUND "OFF"
+            if (theThingbeingDisplayed != null)
+            {
+              audio.play();
+            }
           }
         }
 
         function displaysonClick(id)
         {
+
+          //if user click on another planet without closing current
+          if (theThingbeingDisplayed != null)
+          {
+            if (id != theThingbeingDisplayed)
+            {
+              if (audio != null)
+              {
+                audio.pause();
+                audio.currentTime = 0;
+              }
+              var displayedthing = document.getElementById(theThingbeingDisplayed);
+              displayedthing.style.display = "none";
+            }
+          }
+        
+
           var toBeDisplayed = document.getElementById(id);
           toBeDisplayed.src = toBeDisplayed.dataset.src;
           if (toBeDisplayed.style.display === "none")
           {
+            audio = new Audio(toBeDisplayed.src);
+            audio.volume = 0.6;
             if (check)
             {
-              audio = new Audio(toBeDisplayed.src);
-              audio.volume = 0.6;
               audio.play();
             }
-            
+            theThingbeingDisplayed = id;
             toBeDisplayed.style.display = "block";
           }
           else
@@ -337,6 +388,7 @@
               audio.currentTime = 0;
             }
             toBeDisplayed.style.display = "none";
+            theThingbeingDisplayed = null;
             
           }
 
