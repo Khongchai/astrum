@@ -70,7 +70,7 @@
       text-align: left;
     }
 
-    #mars-info-lost, #mars-info-main, #mars-info-annihilated, #mars-info-nightsky, #mars-info-red, #mars-info-barren, #mars-info-storm, #mars-info-gravity, #mars-info-mountain, #mars-info-rovers
+    .subtexthide
     {
       display: none;
     }
@@ -100,7 +100,12 @@
     <img id="logo" src="pictures/astrum logo.png" height="100" width="100">
     <div class="transitionbody" style="height: 100%">
       <h1 style="letter-spacing: 3px; text-align: center; font-family: segoe ui; font-weight: lighter; color: #F7F9E0">ABOUT PLANETS</h1>
-      <h5 style="font-style: italic; letter-spacing: 3px; float: left; position: absolute; color: #F7F9E0; margin-left: 30px; font-family: segoe ui; font-weight: lighter; top: 30px;">Stories by: Lourna Mydes Quinto</h5>
+      <h5 style="font-style: italic; letter-spacing: 3px; float: left; position: absolute; color: #F7F9E0; margin-left: 30px; font-family: segoe ui; font-weight: lighter; top: 30px;">
+        Stories by: Lourna Mydes Quinto
+        <br>
+        
+      </h5>
+      <h6 style="font-style: italic; letter-spacing: 3px; float: left; color: #F7F9E0; margin-left: 30px; font-family: segoe ui; font-weight: lighter; position: absolute; top: 0px">If planet textures fail to render, click on HD button at the bottom right corner.</h6>
       <h6 id="soundcheck"style="letter-spacing: 3px; text-align: center; font-family: segoe ui; font-weight: lighter; color: #F7F9E0; position: relative; top: -20px; z-index: 10; cursor: pointer" onclick="setsound()">SOUND ON</h6>
 
         <div id="planetsContainer">
@@ -143,10 +148,10 @@
       <div class="planetsinfo">
 
         <div  id="earthframe" class="planetsframe" style="display: none; transition: display .4s" data-src="sounds/Earth V1.wav">
-          <iframe src="https://eyes.nasa.gov/apps/orrery/#/earth?&close=true" frameborder="0" style="width: 100%; height: 900px"></iframe>
+          <iframe id="iframeEarth" src="" frameborder="0" style="width: 100%; height: 900px"></iframe>
           <div id="earthinfo" style="display: inline-block; position: relative; width: 46%; margin-left: 4%; text-justify: inter-character;text-align: justify;">
             <p class="planetdesctext">
-              <strong>Earth</strong>: There is a saying shared across the universe.
+              <span  style="cursor: help" onmouseover="displaysonOver('earth-info-main')" onmouseout="displaysonOut('earth-info-main')"><strong>Earth</strong></span>: There is a saying shared across the universe.
 
               Planet 3627-7 is a special world. It is a liquid world that fills up three fourths of its mass with water, yet sustains billions of species of creatures. Its residents live on the tallest peaks of the coldest mountains, to the hottest plains of its barren deserts, and into the depths of its oceans. It is a world filled with an array of color unlike any other planet in its solar system. The firmament protects it from the radiation of the sun. Frozen water falls from the sky like fine white dust for a quarter of a cycle. It is filled with these things called trees that release gases that sustains life in its atmosphere, and that it is a world filled with creatures as tall as the trees and as small as the pebbles on the ground. 
               <br>
@@ -161,12 +166,37 @@
                 
             </p>
 
-          </div >
+          </div>
+          <div div id="earthAdditionalInfo" style="margin-right: 4%; position: relative; width: 43%; text-align: right; float: right">
+            <p class="planetsubdesctext subtexthide" id="earth-info-main">
+              Earth, our home. Our only home. Our entire history is written on the surface of this miniscule blue globe. She has been taking care of us for millions
+              of years. Writing a music for something that encapsulates so many thing people can relate too is possibly one of the most challenging aspect of this 
+              project. The way I approached this is to capture the essence of sounds we are familiar with through use of synthesizers and acoustic sounds sampling.
+              For example, the sound of white noise could represent a number of things, waterfall, wind, the rustling of leaves, ocean waves, etc. Of course, pure white noise
+              would not sound so good without proper manipulation, so, that will be part of the process as well. 
+              <br>
+              <br>
+              
+              The use of synthesizers in this piece is to bring the sense of being similar, yet not entirely so; an aural uncanny valley. Had I used
+              an entirely acoustic sounds, the elements of this piece would sound too familiar, people would recognize immediately where to place the 
+              sounds in their perceived reality. What I intend for this piece is to bring the listener out of their reality and to look at Earth the same
+              way we look at other planets; the marvel she holds and her fragility. The writer of the story for Earth has perfectly captures the essence of 
+              my intention in her beautifully written work on the left. 
+            
+              <span style="width: 100%; display: inline-block; vertical-align: middle; text-align: center;"> 
+                <img src="pictures/TheBlueMarble.jpg" style="width: 300px"> 
+              </span>
+             
+            </p>
+         
+          </div>
+
+
           
         </div>
 
         <div  id="marsframe" class="planetsframe" style="display: none; transition: display .4s" data-src="sounds/Mars.mp3">
-          <iframe src="https://eyes.nasa.gov/apps/orrery/#/mars?&close=true" frameborder="0" style="width: 100%; height: 900px"></iframe>
+          <iframe id="iframeMars" src="" frameborder="0" style="width: 100%; height: 900px"></iframe>
 
           <div id="marsinfo" style="display: inline-block; position: relative; width: 46%; margin-left: 4%; text-justify: inter-character;text-align: justify;">
             <p class="planetdesctext">
@@ -174,7 +204,10 @@
 
            The year is now 34 AE (After Earth). Humanity has lost its planet and has been travelling through space in search of a new <span onmouseover="displaysonOver('mars-info-lost')" onmouseout="displaysonOut('mars-info-lost')" style="cursor: help;"><strong>home</strong></span>. The AD millennia ended with entire civilizations crumbling into dust and its population <span onmouseover="displaysonOver('mars-info-annihilated')" onmouseout="displaysonOut('mars-info-annihilated')" style="cursor: help;"><strong>annihilated</strong></span> to a mere quarter of 7 billion. Once a planet brimming with life, it is now a skeleton of its former glory.
             
-          Three large aircrafts approach upon the <span style="cursor: help" onmouseover="displaysonOver('mars-info-red')" onmouseout="displaysonOut('mars-info-red')"><strong>red</strong></span> planet of Mars – once a twinkling red dot <span span onmouseover="displaysonOver('mars-info-nightsky')" onmouseout="displaysonOut('mars-info-nightsky')" style="cursor: help"><strong>in the night sky </strong></span>is now a looming orb of a second home that is as unwelcoming as its <span onmouseover="displaysonOver('mars-info-barren')" onmouseout="displaysonOut('mars-info-barren')" style="cursor: help;"><strong>barren landscape.</strong></span> Touching upon the desert sand, heartbeats are loud against the whispers of the <span style="cursor: help" onmouseover="displaysonOver('mars-info-storm')" onmouseout="displaysonOut('mars-info-storm')"><strong>storm.</strong></span> 
+          Three large aircrafts approach upon the <span style="cursor: help" onmouseover="displaysonOver('mars-info-red')" onmouseout="displaysonOut('mars-info-red')"><strong>red</strong></span> planet of Mars – once a twinkling red dot <span span onmouseover="displaysonOver('mars-info-nightsky')" onmouseout="displaysonOut('mars-info-nightsky')" style="cursor: help"><strong>in the night sky </strong></span>is now a looming orb of a second home that is as unwelcoming as its <span onmouseover="displaysonOver('mars-info-barren')" onmouseout="displaysonOut('mars-info-barren')" style="cursor: help;"><strong>barren landscape.</strong></span> 
+          <br>
+          <br>
+          Touching upon the desert sand, heartbeats are loud against the whispers of the <span style="cursor: help" onmouseover="displaysonOver('mars-info-storm')" onmouseout="displaysonOut('mars-info-storm')"><strong>storm.</strong></span> 
           They shiver at the sight of a cold, dead vast expanse of rocks on the dusty surface. Their steps are <span style="cursor: help" onmouseover="displaysonOver('mars-info-gravity')" onmouseout="displaysonOut('mars-info-gravity')" ><strong>light</strong></span> and they float through the air just by a brush of a footstep. As one, they venture into uncharted territory, blinded by the winds of the storm and the dust that dances across their vision.
           
           People huddle together for comfort as they walk towards a peak that touches the scarlet skies of its toxic atmosphere. It is <span style="cursor: help" onmouseover="displaysonOver('mars-info-mountain')" onmouseout="displaysonOut('mars-info-mountain')"><strong>Olympus Mons</strong></span> and it rises as a beacon of shelter. There is a settlement by their predecessors and they must arrive before the setting of the sun. As they reach the foot of the mountain, they see the shadows of the very <span><strong style="cursor: help" onmouseover="displaysonOver('mars-info-rovers')" onmouseout="displaysonOut('mars-info-rovers')">first explorers</strong></span> from Earth standing side by side, their solar panels glinting in the light, and there humanity is reminded of one's own inquisitive nature.
@@ -185,7 +218,7 @@
           </div>
 
           <div id="marsAdditionalInfo" style="margin-right: 4%; position: relative; width: 43%; text-align: right; float: right">
-            <p class="planetsubdesctext"id="mars-info-lost">
+            <p class="planetsubdesctext subtexthide"id="mars-info-lost">
               The space race to send people to Mars has never been more fierce, with  <span ><img src="pictures/ColonyOnMarsIII.jpg"style="width: 130px; float: right; margin: 10px; "></span>private companies such as Blue Origin,
               SpaceX, Boeing, etc. working closely with government space agencies around the world to plan out our species' next biggest step.
               <br>
@@ -201,7 +234,7 @@
               the quality of our first home.
             </p>
 
-            <p class="planetsubdesctext" id="mars-info-main" >
+            <p class="planetsubdesctext subtexthide" id="mars-info-main">
               For Mars, I intended for the soundscape to exude somewhat of an eerie, and bleak atmosphere. The accompanying story depicts a scene where
               humans slowly evacuate from the dying planet Earth. As they approach the looming red planet, several thoughts pop up in their heads, from
               the scarcity of resource to the vast and empty inhabitable landscape on which to become their new home, most likely until their last breath.
@@ -216,7 +249,7 @@
 
             </p>
 
-            <p class="planetsubdesctext" id="mars-info-annihilated"> 
+            <p class="planetsubdesctext subtexthide" id="mars-info-annihilated"> 
               From massive wildfire disasters to the melting of the polar ice caps, the evidence for climate change has never been more apparent,
                yet there are still some people that refuse to accept human's influence over the sudden rise of global temperature. 
                <br>
@@ -229,7 +262,7 @@
               <img src="pictures/GlobalWarmingGraph II.png" style="width: 300px; float: right">
             </p>
 
-            <p class="planetsubdesctext" id="mars-info-nightsky">
+            <p class="planetsubdesctext subtexthide" id="mars-info-nightsky">
               In the night sky, Mars is the third brightest planet behind Jupiter and Venus. It appears as a orange-red-hued bright dot in the night sky close to Saturn, Jupiter and the star Antares. With a good enough home telescope, we can 
               see very fine details on Mars, even its ice caps. <img src="pictures/Mars in the night sky.jpg" style="width: 300px; float: right">
               <br>
@@ -240,7 +273,7 @@
               
             </p>
 
-            <p class="planetsubdesctext" id="mars-info-red">
+            <p class="planetsubdesctext subtexthide" id="mars-info-red">
               The reddish hue on Mars is a result of rusty dust suspended in the atmosphere; however, a closer inspection of the planet would reveal that the surface is more orange-red rather than the strong reddish hue depicted in many
               oversaturated photos on the internet.
               <img src="pictures/MarsSurface.jpg" style="width: 300px; float: right; margin-left: 10px;">
@@ -252,7 +285,7 @@
               or is it a gradual process of the rocks interraction to the Martian atmosphere over billions of years.
             </p>
 
-            <p class="planetsubdesctext" id="mars-info-barren">
+            <p class="planetsubdesctext subtexthide" id="mars-info-barren">
               One of the most concerning aspect of living on Mars lies in its nothingness. On Earth, most of our agricultural activities are done outdoors; grow crops, livestock, etc. But on Mars, its surface is a true rocky desert of nothingness, we will have to engineer our ways through the myriads of problems facing a true self-sustained colony; namely, how can we make sure that the colony will have a constant supply of Energy, how do we keep the few first generations of people sane, how do we grow food, how do we get water, etc. 
               <br>
               <br>
@@ -260,7 +293,7 @@
               <img src="pictures/MarsPanorama.jpg" style="width: 100%; margin-top: 20px">
             </p>
 
-            <p class="planetsubdesctext" id="mars-info-storm"> 
+            <p class="planetsubdesctext subtexthide" id="mars-info-storm"> 
               We have learnt about Mars’ storm the hard way when the probe Mariner arrived at Mars in 1971 expecting to see new fine details of this planet’s surface. What we got instead was a storm that covers virtually the entire planet that lasted for a month. 
               <img src="pictures/MarsStorm.jpg" alt="" style="margin: 15px; width: 300px; float: right">
               <br>
@@ -272,7 +305,7 @@
               thus decreasing the power output significantly.
             </p>
  
-            <p class="planetsubdesctext" id="mars-info-gravity">
+            <p class="planetsubdesctext subtexthide" id="mars-info-gravity">
               The gravity on Mars is about 3.711 meters per second squared, in other words, an object falling at Mars would see an increase in its speed by 3.711 m/s every second. 
               In comparison, Earth is about 9.807 m/s^2. A person weighs 100kg on Earth would only weigh around 38kg on Mars. 
               Though we might not be able to jump as high as portrayed in the film John Carter, a realistic height of 2.64 jump still sounds rather fun. 
@@ -284,7 +317,7 @@
               living in such condition for a long period of time could bring about several medical conditions.    
             </p>
 
-            <p class="planetsubdesctext" id="mars-info-mountain">
+            <p class="planetsubdesctext subtexthide" id="mars-info-mountain">
               <img src="pictures/Olympus Mons.png" style="width: 100%; margin-bottom: 20px" >
               Olympus Mons is the tallest mountain found anywhere in the solar system, towering over even our Mount Everest and Mauna Kea. 
               Its diameter is around the size of an entire country: 624 km, and a height of 24 km. 
@@ -293,7 +326,7 @@
               <img src="pictures/Olympus Mons II.jpg" style="width: 250px; margin-top: 20px">
             </p>
 
-            <p class="planetsubdesctext" id="mars-info-rovers">
+            <p class="planetsubdesctext subtexthide" id="mars-info-rovers">
               Though not the first rovers to have landed on the surface of Mars, 
               Curiosity and Opportunity were the true first explorers by merits. 
               Surface photos and details collected by these two were priceless. 
@@ -308,17 +341,26 @@
           
           
         </div>
-
-
-
-        
-          
       </div>
 
       <script>
         var audio; 
         var check = true; 
         var theThingbeingDisplayed = null;
+
+        //without this fucntion camera will save the changes; 
+        //if user looks for other planets, the camera won't focus at the same place
+        function openiFrame (reference)
+        {
+          if (reference === "marsframe")
+          {
+            document.querySelector("#iframeMars").src = "https://eyes.nasa.gov/apps/orrery/#/mars?&close=true";
+          }
+          if (reference === "earthframe")
+          {
+            document.querySelector("#iframeEarth").src = "https://eyes.nasa.gov/apps/orrery/#/earth?&close=true";
+          }
+        }
 
         function setsound()
         {
@@ -348,6 +390,7 @@
 
         function displaysonClick(id)
         {
+          openiFrame(id);
 
           //if user click on another planet without closing current
           if (theThingbeingDisplayed != null)
@@ -369,6 +412,7 @@
           toBeDisplayed.src = toBeDisplayed.dataset.src;
           if (toBeDisplayed.style.display === "none")
           {
+            
             audio = new Audio(toBeDisplayed.src);
             audio.volume = 0.6;
             if (check)
@@ -408,7 +452,7 @@
           var toBeDisplayed = document.getElementById(id);
           toBeDisplayed.style.opacity = 0;
           toBeDisplayed.style.display = "none";
-          toBeDisplayed.className = "planetsubdesctext";
+          toBeDisplayed.className = "planetsubdesctext subtexthide";
                
         }
 
